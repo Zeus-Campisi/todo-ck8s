@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Todo } from './todo';
 
@@ -14,7 +14,7 @@ export class TodoService {
   public getAllTodos(): Observable<Todo[]> {
     console.log('TodoService::getAllTodos was called');
 
-    return this.http.get<Todo[]>(BASE_PATH + '/todos') as Observable<Todo[]>;
+    return this.http.get<Todo[]>(BASE_PATH + '/todos');
   }
 
   public insertTodo(todo: Todo): void {
@@ -33,13 +33,19 @@ export class TodoService {
       });
   }
 
-  public searchTodos(searchText: string): Observable<Object[]> {
+  public searchTodos(searchText: string): Observable<SearchResult[]> {
     console.log('TodoService::searchTodos was called: ' + searchText);
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(
+    return this.http.post<SearchResult[]>(
       BASE_PATH + '/search',
       { searchText: searchText },
-      { headers: headers }) as Observable<Object[]>;
+      { headers: headers });
   }
+}
+
+export interface SearchResult {
+  _source: {
+    todotext: string;
+  };
 }

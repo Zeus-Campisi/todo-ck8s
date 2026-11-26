@@ -1,0 +1,10 @@
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/zone.js/fesm2015/zone.js");
+const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/zone.js/fesm2015/zone-testing.js");
+// angular:polyfills:angular:polyfills
+
+
+//# debugId=9d419f40-0d57-573e-aa65-b87ad5163f2f
+//# sourceMappingURL=polyfills.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9wb2x5ZmlsbHMuanMiLHsidXJscyI6IjUiLCJpZHMiOiI2In0sWyI3IiwiOCJdLFtdLFsiNyIsIjgiXSx7fSwiL25vZGVfbW9kdWxlcy96b25lLmpzL2Zlc20yMDE1L3pvbmUuanMiLCIvbm9kZV9tb2R1bGVzL3pvbmUuanMvZmVzbTIwMTUvem9uZS10ZXN0aW5nLmpzIl0=
+//# vitestSourceMap={"version":3,"mappings":"AAAA;AACA","names":[],"ignoreList":[],"sources":["angular:polyfills:angular:polyfills"],"sourcesContent":["import \"zone.js\";\nimport \"zone.js/testing\";"],"file":"/polyfills.js"}

@@ -1,0 +1,31 @@
+{
+  "name": "todo-view",
+  "root": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view",
+  "modules": {
+    "client": {
+      "/polyfills.js": "c7d1f6d14c0437ab6f6b0e92042769330c9e7397",
+      "/init-compiler.js": "2dd30daba300bbb2982bede27209711f0d82f1ef",
+      "/init-testbed.js": "ced569b1cd34b850cedd5c769c63db01497910c7",
+      "/chunk-EFV3TZQO.js": "dfd56fabe21ec89bbe9b2e37f5c849053100f20f",
+      "/vitest-mock-patch.js": "c7567b89132f6ea947f64e23b8d2a602a274900c",
+      "/src/app/todo.service.spec.ts": "5dcacf46b36a822f15970f72dadf40b702f61f03",
+      "/src/app/app.component.spec.ts": "ed1836936a6bed2019bfad91d80325b0e300cb14",
+      "/chunk-WEEUW4PJ.js": "59db6f337ce28ba3119c1a14fb72ba85172e0bd9",
+      "/src/app/todo.spec.ts": "bd0d0663bb4d992e192db4554568e4415d7ce3aa",
+      "/chunk-T27EYI3P.js": "ce4d601394be370f4ff3ecf1295b1dc5269ce976"
+    }
+  },
+  "externalized": {
+    "client": {
+      "/node_modules/zone.js/fesm2015/zone.js": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/zone.js/fesm2015/zone.js",
+      "/node_modules/zone.js/fesm2015/zone-testing.js": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/zone.js/fesm2015/zone-testing.js",
+      "/node_modules/@angular/compiler/fesm2022/compiler.mjs": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/@angular/compiler/fesm2022/compiler.mjs",
+      "/node_modules/@angular/core/fesm2022/core.mjs": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/@angular/core/fesm2022/core.mjs",
+      "/node_modules/@angular/core/fesm2022/testing.mjs": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/@angular/core/fesm2022/testing.mjs",
+      "/node_modules/@angular/platform-browser/fesm2022/testing.mjs": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/@angular/platform-browser/fesm2022/testing.mjs",
+      "/node_modules/@angular/common/fesm2022/common.mjs": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/@angular/common/fesm2022/common.mjs",
+      "/node_modules/@angular/common/fesm2022/http.mjs": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/@angular/common/fesm2022/http.mjs",
+      "/node_modules/@angular/forms/fesm2022/forms.mjs": "/home/zcampisi/course/todo-cloud-k8s-starter/todo-view/node_modules/@angular/forms/fesm2022/forms.mjs"
+    }
+  }
+}

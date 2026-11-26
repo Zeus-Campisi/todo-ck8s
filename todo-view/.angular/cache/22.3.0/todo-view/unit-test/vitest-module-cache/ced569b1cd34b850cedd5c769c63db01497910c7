@@ -1,0 +1,65 @@
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/chunk-EFV3TZQO.js", {"importedNames":["__decorateElement","__decoratorStart","__runInitializers"]});
+const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/core.mjs", {"importedNames":["NgModule","provideZoneChangeDetection"]});
+const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/testing.mjs", {"importedNames":["getTestBed","ɵgetCleanupHook","TestComponentRenderer"]});
+const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/@angular/platform-browser/fesm2022/testing.mjs", {"importedNames":["BrowserTestingModule","platformBrowserTesting"]});
+const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/@angular/common/fesm2022/common.mjs", {"importedNames":["ɵgetDOM"]});
+const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/vitest/dist/index.js", {"importedNames":["afterEach","beforeEach"]});
+
+
+// angular:test-bed-init:angular:test-bed-init
+
+
+
+
+
+var providers = [];
+(0,__vite_ssr_import_5__.beforeEach)((0,__vite_ssr_import_2__.ɵgetCleanupHook)(false));
+(0,__vite_ssr_import_5__.afterEach)((0,__vite_ssr_import_2__.ɵgetCleanupHook)(true));
+var DynamicDOMTestComponentRenderer = class extends __vite_ssr_import_2__.TestComponentRenderer {
+  insertRootElement(rootElId, tagName = "div") {
+    this.removeAllRootElements();
+    const dom = (0,__vite_ssr_import_4__.ɵgetDOM)();
+    const doc = dom.getDefaultDocument();
+    if (doc && doc.body) {
+      const rootElement = doc.createElement(tagName);
+      rootElement.setAttribute("id", rootElId);
+      doc.body.appendChild(rootElement);
+    }
+  }
+  removeAllRootElements() {
+    const dom = (0,__vite_ssr_import_4__.ɵgetDOM)();
+    const doc = dom.getDefaultDocument();
+    if (doc && typeof doc.querySelectorAll === "function") {
+      const oldRoots = doc.querySelectorAll("[id^=root]");
+      for (let i = 0; i < oldRoots.length; i++) {
+        dom.remove(oldRoots[i]);
+      }
+    }
+  }
+};
+var ANGULAR_TESTBED_SETUP = /* @__PURE__ */ Symbol.for("@angular/cli/testbed-setup");
+var _TestModule_decorators, _init;
+if (!globalThis[ANGULAR_TESTBED_SETUP]) {
+  globalThis[ANGULAR_TESTBED_SETUP] = true;
+  _TestModule_decorators = [(0,__vite_ssr_import_1__.NgModule)({
+    providers: [
+      ...typeof Zone !== "undefined" ? [(0,__vite_ssr_import_1__.provideZoneChangeDetection)()] : [],
+      ...providers,
+      { provide: __vite_ssr_import_2__.TestComponentRenderer, useClass: DynamicDOMTestComponentRenderer }
+    ]
+  })];
+  class TestModule {
+  }
+  _init = (0,__vite_ssr_import_0__.__decoratorStart)(null);
+  TestModule = (0,__vite_ssr_import_0__.__decorateElement)(_init, 0, "TestModule", _TestModule_decorators, TestModule);
+  (0,__vite_ssr_import_0__.__runInitializers)(_init, 1, TestModule);
+  (0,__vite_ssr_import_2__.getTestBed)().initTestEnvironment([__vite_ssr_import_3__.BrowserTestingModule, TestModule], (0,__vite_ssr_import_3__.platformBrowserTesting)(), {
+    errorOnUnknownElements: true,
+    errorOnUnknownProperties: true
+  });
+}
+//# debugId=387f8a21-b491-5729-819f-436641688aba
+//# sourceMappingURL=init-testbed.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9pbml0LXRlc3RiZWQuanMiLHsidXJscyI6IjUiLCJpZHMiOiI2In0sWyI3IiwiOCIsIjkiLCIxMCIsIjExIiwiMTIiXSxbXSxbIjciLCI4IiwiOSIsIjEwIiwiMTEiLCIxMiJdLHt9LCIvY2h1bmstRUZWM1RaUU8uanMiLCIvbm9kZV9tb2R1bGVzL0Bhbmd1bGFyL2NvcmUvZmVzbTIwMjIvY29yZS5tanMiLCIvbm9kZV9tb2R1bGVzL0Bhbmd1bGFyL2NvcmUvZmVzbTIwMjIvdGVzdGluZy5tanMiLCIvbm9kZV9tb2R1bGVzL0Bhbmd1bGFyL3BsYXRmb3JtLWJyb3dzZXIvZmVzbTIwMjIvdGVzdGluZy5tanMiLCIvbm9kZV9tb2R1bGVzL0Bhbmd1bGFyL2NvbW1vbi9mZXNtMjAyMi9jb21tb24ubWpzIiwiL25vZGVfbW9kdWxlcy92aXRlc3QvZGlzdC9pbmRleC5qcyJd
+//# vitestSourceMap={"version":3,"mappings":"AAAA,CAAA;AAGI;AACA;AACA;AACA;AACA;;;;;;;;;AACA,IAAM,YAAY,CAAC;AAKnB,qCAAW,0CAAe,KAAK,CAAC;AAChC,oCAAU,0CAAe,IAAI,CAAC;AAE9B,IAAM,kCAAN,cAA8C,4CAAsB;AAAA,EAClE,kBAAkB,UAAU,UAAU,OAAO;AAC3C,SAAK,sBAAsB;AAE3B,UAAM,MAAM,mCAAQ;AACpB,UAAM,MAAM,IAAI,mBAAmB;AACnC,QAAI,OAAO,IAAI,MAAM;AACnB,YAAM,cAAc,IAAI,cAAc,OAAO;AAC7C,kBAAY,aAAa,MAAM,QAAQ;AACvC,UAAI,KAAK,YAAY,WAAW;AAAA,IAClC;AAAA,EACF;AAAA,EAEA,wBAAwB;AACtB,UAAM,MAAM,mCAAQ;AACpB,UAAM,MAAM,IAAI,mBAAmB;AACnC,QAAI,OAAO,OAAO,IAAI,qBAAqB,YAAY;AACrD,YAAM,WAAW,IAAI,iBAAiB,YAAY;AAClD,eAAS,IAAI,GAAG,IAAI,SAAS,QAAQ,KAAK;AACxC,YAAI,OAAO,SAAS,CAAC,CAAC;AAAA,MACxB;AAAA,IACF;AAAA,EACF;AACF;AAEA,IAAM,wBAAwB,uBAAO,IAAI,4BAA4B;AAzCzE;AA0CI,IAAI,CAAC,WAAW,qBAAqB,GAAG;AACtC,aAAW,qBAAqB,IAAI;AAMpC,4BAAC,mCAAS;AAAA,IACR,WAAW;AAAA,MACT,GAAI,OAAO,SAAS,cAAc,CAAC,sDAA4B,IAAI,CAAC;AAAA,MACpE,GAAG;AAAA,MACH,EAAE,SAAS,6CAAuB,UAAU,gCAAgC;AAAA,IAC9E;AAAA,EACF,CAAC;AAAA,EACD,MAAM,WAAW;AAAA,EAAC;AAAlB;AAAM,eAAN,oEAPA,wBAOM;AAAN,wDAAM;AAEN,wCAAW,CAAE,oBAAoB,CAAC,4CAAsB,UAAU,GAAG,kDAAuB,EAAG;AAAA,IAC7F,wBAAwB;AAAA,IACxB,0BAA0B;AAAA,EAE5B,CAAC;AACH","names":[],"ignoreList":[],"sources":["angular:test-bed-init:angular:test-bed-init"],"sourcesContent":["\n    \n    // Initialize the Angular testing environment\n    import { NgModule, provideZoneChangeDetection } from '@angular/core';\n    import { getTestBed, ɵgetCleanupHook as getCleanupHook, TestComponentRenderer } from '@angular/core/testing';\n    import { BrowserTestingModule, platformBrowserTesting } from '@angular/platform-browser/testing';\n    import { ɵgetDOM } from '@angular/common';\n    import { afterEach, beforeEach } from 'vitest';\n    const providers = [];\n\n    // The beforeEach and afterEach hooks are registered outside the globalThis guard.\n    // This ensures that the hooks are always applied, even in non-isolated browser environments.\n    // Same as https://github.com/angular/angular/blob/05a03d3f975771bb59c7eefd37c01fa127ee2229/packages/core/testing/srcs/test_hooks.ts#L21-L29\n    beforeEach(getCleanupHook(false));\n    afterEach(getCleanupHook(true));\n\n    class DynamicDOMTestComponentRenderer extends TestComponentRenderer {\n      insertRootElement(rootElId, tagName = 'div') {\n        this.removeAllRootElements();\n\n        const dom = ɵgetDOM();\n        const doc = dom.getDefaultDocument();\n        if (doc && doc.body) {\n          const rootElement = doc.createElement(tagName);\n          rootElement.setAttribute('id', rootElId);\n          doc.body.appendChild(rootElement);\n        }\n      }\n\n      removeAllRootElements() {\n        const dom = ɵgetDOM();\n        const doc = dom.getDefaultDocument();\n        if (doc && typeof doc.querySelectorAll === 'function') {\n          const oldRoots = doc.querySelectorAll('[id^=root]');\n          for (let i = 0; i < oldRoots.length; i++) {\n            dom.remove(oldRoots[i]);\n          }\n        }\n      }\n    }\n\n    const ANGULAR_TESTBED_SETUP = Symbol.for('@angular/cli/testbed-setup');\n    if (!globalThis[ANGULAR_TESTBED_SETUP]) {\n      globalThis[ANGULAR_TESTBED_SETUP] = true;\n\n      // The Angular TestBed needs to be initialized before any tests are run.\n      // In a non-isolated environment, this setup file can be executed multiple times.\n      // The guard condition above ensures that the setup is only performed once.\n\n      @NgModule({\n        providers: [\n          ...(typeof Zone !== 'undefined' ? [provideZoneChangeDetection()] : []),\n          ...providers,\n          { provide: TestComponentRenderer, useClass: DynamicDOMTestComponentRenderer },\n        ],\n      })\n      class TestModule {}\n\n      getTestBed().initTestEnvironment([BrowserTestingModule, TestModule], platformBrowserTesting(), {\n        errorOnUnknownElements: true,\n        errorOnUnknownProperties: true,\n        \n      });\n    }\n  "],"file":"/init-testbed.js"}

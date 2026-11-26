@@ -1,0 +1,24 @@
+__vite_ssr_exportName__("Todo", () => { try { return Todo } catch {} });
+__vite_ssr_exportName__("init_todo", () => { try { return init_todo } catch {} });
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/chunk-EFV3TZQO.js", {"importedNames":["__esm"]});
+
+
+// src/app/todo.ts
+var Todo;
+var init_todo = (0,__vite_ssr_import_0__.__esm)({
+  "src/app/todo.ts"() {
+    Todo = class {
+      title = "";
+      constructor(values = {}) {
+        Object.assign(this, values);
+      }
+    };
+  }
+});
+
+
+//# debugId=d630ccda-7837-5c45-9500-9cb37e3a6a80
+//# sourceMappingURL=chunk-T27EYI3P.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9jaHVuay1UMjdFWUkzUC5qcyIseyJ1cmxzIjoiNSIsImlkcyI6IjYifSxbIjciXSxbXSxbIjciXSx7fSwiL2NodW5rLUVGVjNUWlFPLmpzIl0=
+//# vitestSourceMap={"version":3,"mappings":"AAAA,CAAA;;;;;;AAAA,IAAa;AAAb;AAAA;AAAO,IAAM,OAAN,MAAW;AAAA,MAChB,QAAgB;AAAA,MAEhB,YAAY,SAAiB,CAAC,GAAG;AAC/B,eAAO,OAAO,MAAM,MAAM;AAAA,MAC5B;AAAA,IACF;AAAA;AAAA","names":[],"ignoreList":[],"sources":["src/app/todo.ts"],"sourcesContent":["export class Todo {\n  title: string = '';\n\n  constructor(values: Object = {}) {\n    Object.assign(this, values);\n  }\n}\n"],"file":"/chunk-T27EYI3P.js"}

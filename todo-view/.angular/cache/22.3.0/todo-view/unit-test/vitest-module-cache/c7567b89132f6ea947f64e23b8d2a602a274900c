@@ -1,0 +1,29 @@
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vitest/dist/index.js", {"importedNames":["vi"]});
+// angular:vitest-mock-patch:angular:vitest-mock-patch
+
+var ANGULAR_VITEST_MOCK_PATCH = /* @__PURE__ */ Symbol.for("@angular/cli/vitest-mock-patch");
+if (!globalThis[ANGULAR_VITEST_MOCK_PATCH]) {
+  let patch = function(original) {
+    return (path, ...args) => {
+      if (typeof path === "string" && /^[./]/.test(path)) {
+        throw error;
+      };
+      return original(path, ...args);
+    };
+  };
+  globalThis[ANGULAR_VITEST_MOCK_PATCH] = true;
+  const error = new Error(
+    'The "vi.mock" and related methods are not supported for relative imports with the Angular unit-test system. Please use Angular TestBed for mocking dependencies.'
+  );
+  const { mock, doMock, importMock, unmock, doUnmock } = __vite_ssr_import_0__.vi;
+  __vite_ssr_import_0__.vi.mock = patch(mock);
+  __vite_ssr_import_0__.vi.doMock = patch(doMock);
+  __vite_ssr_import_0__.vi.importMock = patch(importMock);
+  __vite_ssr_import_0__.vi.unmock = patch(unmock);
+  __vite_ssr_import_0__.vi.doUnmock = patch(doUnmock);
+}
+//# debugId=ae20a592-1749-507e-a107-d93e1a3da3c6
+//# sourceMappingURL=vitest-mock-patch.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy92aXRlc3QtbW9jay1wYXRjaC5qcyIseyJ1cmxzIjoiNSIsImlkcyI6IjYifSxbIjciXSxbXSxbIjciXSx7fSwiL25vZGVfbW9kdWxlcy92aXRlc3QvZGlzdC9pbmRleC5qcyJd
+//# vitestSourceMap={"version":3,"mappings":"AACI;;;AAEA,IAAM,4BAA4B,uBAAO,IAAI,gCAAgC;AAC7E,IAAI,CAAC,WAAW,yBAAyB,GAAG;AAW1C,MAAS,QAAT,SAAe,UAAU;AACvB,WAAO,CAAC,SAAS,SAAS;AAExB,UAAI,OAAO,SAAS,YAAY,QAAQ,KAAK,IAAI,GAAG;AAClD,cAAM;AAAA,MACR;AAGA,aAAO,SAAS,MAAM,GAAG,IAAI;AAAA,IAC/B;AAAA,EACF;AApBA,aAAW,yBAAyB,IAAI;AAExC,QAAM,QAAQ,IAAI;AAAA,IAChB;AAAA,EAEF;AAGA,QAAM,EAAE,MAAM,QAAQ,YAAY,QAAQ,SAAS,IAAI;AAcvD,2BAAG,OAAO,MAAM,IAAI;AACpB,2BAAG,SAAS,MAAM,MAAM;AACxB,2BAAG,aAAa,MAAM,UAAU;AAChC,2BAAG,SAAS,MAAM,MAAM;AACxB,2BAAG,WAAW,MAAM,QAAQ;AAC9B","names":[],"ignoreList":[],"sources":["angular:vitest-mock-patch:angular:vitest-mock-patch"],"sourcesContent":["\n    import { vi } from 'vitest';\n\n    const ANGULAR_VITEST_MOCK_PATCH = Symbol.for('@angular/cli/vitest-mock-patch');\n    if (!globalThis[ANGULAR_VITEST_MOCK_PATCH]) {\n      globalThis[ANGULAR_VITEST_MOCK_PATCH] = true;\n\n      const error = new Error(\n        'The \"vi.mock\" and related methods are not supported for relative imports with the Angular unit-test system. ' +\n        'Please use Angular TestBed for mocking dependencies.'\n      );\n\n      // Store original implementations\n      const { mock, doMock, importMock, unmock, doUnmock } = vi;\n\n      function patch(original) {\n        return (path, ...args) => {\n          // Check if the path is a string and starts with a character that indicates a relative path.\n          if (typeof path === 'string' && /^[./]/.test(path)) {\n            throw error;\n          }\n\n          // Call the original function for non-relative paths.\n          return original(path, ...args);\n        };\n      }\n\n      vi.mock = patch(mock);\n      vi.doMock = patch(doMock);\n      vi.importMock = patch(importMock);\n      vi.unmock = patch(unmock);\n      vi.doUnmock = patch(doUnmock);\n    }\n  "],"file":"/vitest-mock-patch.js"}

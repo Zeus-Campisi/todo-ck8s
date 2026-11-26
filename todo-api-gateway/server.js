@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const rabbitmq = require('amqplib/callback_api');
 const apiAdapter = require('./apiAdapter');
 const envProps = require('./env_props');
@@ -11,12 +10,8 @@ const storageServiceApi = apiAdapter(envProps.storageServiceURL);
 // Initializing the Express Framework //////////////////////////////////////////////////////////////////////////////////
 const app = express();
 const port = 3000;
-app.use(bodyParser.json());
-app.use(
-    bodyParser.urlencoded({
-        extended: true
-    })
-);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Set up the API routes ///////////////////////////////////////////////////////////////////////////////////////////////
 

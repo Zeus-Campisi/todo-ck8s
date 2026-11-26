@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const elasticsearch = require('elasticsearch');
 const envProps = require('./env_props');
 
@@ -10,12 +9,8 @@ const envProps = require('./env_props');
 // Initializing the Express Framework //////////////////////////////////////////////////////////////////////////////////
 const app = express();
 const port = 3000;
-app.use(bodyParser.json());
-app.use(
-    bodyParser.urlencoded({
-        extended: true
-    })
-);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Elasticsearch Client Setup //////////////////////////////////////////////////////////////////////////////////////////
 const elasticClient = new elasticsearch.Client({

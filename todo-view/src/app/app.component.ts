@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
-import { TodoService } from './todo.service';
+import { Observable } from 'rxjs';
 import { Todo } from './todo';
-import { Observable } from 'rxjs/Observable';
+import { SearchResult, TodoService } from './todo.service';
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [TodoService]
 })
 export class AppComponent {
   newTodo: Todo = new Todo();
-  searchText: string;
+  searchText = '';
   public todos$: Observable<Todo[]>;
-  searchResult$: Observable<Object[]>;
+  searchResult$: Observable<SearchResult[]> | undefined;
 
   constructor(private todoService: TodoService) {
     this.todos$ = todoService.getAllTodos();

@@ -1,0 +1,26 @@
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/chunk-WEEUW4PJ.js", {"importedNames":["TodoService","init_todo_service"]});
+const __vite_ssr_import_1__ = await __vite_ssr_import__("/chunk-EFV3TZQO.js");
+const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/testing.mjs", {"importedNames":["TestBed"]});
+const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/@angular/common/fesm2022/http.mjs", {"importedNames":["HttpClientModule"]});
+
+
+// src/app/todo.service.spec.ts
+(0,__vite_ssr_import_0__.init_todo_service)();
+
+
+describe("TodoService", () => {
+	beforeEach(() => {
+		__vite_ssr_import_2__.TestBed.configureTestingModule({
+			providers: [__vite_ssr_import_0__.TodoService],
+			imports: [__vite_ssr_import_3__.HttpClientModule]
+		});
+	});
+	it("should be created", () => {
+		expect(__vite_ssr_import_2__.TestBed.inject((0,__vite_ssr_import_0__.TodoService))).toBeTruthy();
+	});
+});
+//# debugId=50934c04-88ee-5399-a624-60b5a46d0735
+//# sourceMappingURL=spec-app-todo.service.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9zcmMvYXBwL3RvZG8uc2VydmljZS5zcGVjLnRzIix7InVybHMiOiI1IiwiaWRzIjoiNiJ9LFsiNyIsIjgiLCI5IiwiMTAiXSxbXSxbIjciLCI4IiwiOSIsIjEwIl0se30sIi9jaHVuay1XRUVVVzRQSi5qcyIsIi9jaHVuay1FRlYzVFpRTy5qcyIsIi9ub2RlX21vZHVsZXMvQGFuZ3VsYXIvY29yZS9mZXNtMjAyMi90ZXN0aW5nLm1qcyIsIi9ub2RlX21vZHVsZXMvQGFuZ3VsYXIvY29tbW9uL2Zlc20yMDIyL2h0dHAubWpzIl0=
+//# vitestSourceMap={"version":3,"mappings":"AAAA,CAAA;;AAAA;AAGA;;;;AADA;;;AAGA,SAAS,qBAAqB;CAC5B,iBAAiB;EACf,8BAAQ,uBAAuB;GAC7B,WAAW,CAAC,iCAAW;GACvB,SAAS,CACP,sCACF;EACF,CAAC;CACH,CAAC;CAED,GAAG,2BAA2B;EAC5B,OAAO,8BAAQ,UAAO,kCAAW,CAAC,EAAE,WAAW;CACjD,CAAC;AACH,CAAC","names":[],"ignoreList":[],"sources":["todo.service.spec.ts"],"sourcesContent":["import { TestBed } from '@angular/core/testing';\n\nimport { TodoService } from './todo.service';\nimport { HttpClientModule } from '@angular/common/http';\n\ndescribe('TodoService', () => {\n  beforeEach(() => {\n    TestBed.configureTestingModule({\n      providers: [TodoService],\n      imports: [\n        HttpClientModule\n      ]\n    });\n  });\n\n  it('should be created', () => {\n    expect(TestBed.inject(TodoService)).toBeTruthy();\n  });\n});\n"],"file":"/src/app/todo.service.spec.ts"}

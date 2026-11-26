@@ -1,0 +1,20 @@
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/chunk-T27EYI3P.js", {"importedNames":["Todo","init_todo"]});
+const __vite_ssr_import_1__ = await __vite_ssr_import__("/chunk-EFV3TZQO.js");
+
+
+// src/app/todo.spec.ts
+(0,__vite_ssr_import_0__.init_todo)();
+describe("Todo", () => {
+	it("should create an instance", () => {
+		expect(new __vite_ssr_import_0__.Todo()).toBeTruthy();
+	});
+	it("should accept values in the constructor", () => {
+		const todo = new __vite_ssr_import_0__.Todo({ title: "hello" });
+		expect(todo.title).toEqual("hello");
+	});
+});
+//# debugId=7b3d7bda-04c3-5bb8-a553-95dcb114a067
+//# sourceMappingURL=spec-app-todo.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9zcmMvYXBwL3RvZG8uc3BlYy50cyIseyJ1cmxzIjoiNSIsImlkcyI6IjYifSxbIjciLCI4Il0sW10sWyI3IiwiOCJdLHt9LCIvY2h1bmstVDI3RVlJM1AuanMiLCIvY2h1bmstRUZWM1RaUU8uanMiXQ==
+//# vitestSourceMap={"version":3,"mappings":"AAAA,CAAA;;;;;AAAA;AAEA,SAAS,cAAc;CACrB,GAAG,mCAAmC;EACpC,OAAO,IAAI,2BAAK,CAAC,EAAE,WAAW;CAChC,CAAC;CAED,GAAG,iDAAiD;EAClD,MAAM,OAAO,IAAI,2BAAK,EACpB,OAAO,QACT,CAAC;EACD,OAAO,KAAK,KAAK,EAAE,QAAQ,OAAO;CACpC,CAAC;AACH,CAAC","names":[],"ignoreList":[],"sources":["todo.spec.ts"],"sourcesContent":["import { Todo } from './todo';\n\ndescribe('Todo', () => {\n  it('should create an instance', () => {\n    expect(new Todo()).toBeTruthy();\n  });\n\n  it('should accept values in the constructor', () => {\n    const todo = new Todo({\n      title: 'hello'\n    });\n    expect(todo.title).toEqual('hello');\n  });\n});\n"],"file":"/src/app/todo.spec.ts"}

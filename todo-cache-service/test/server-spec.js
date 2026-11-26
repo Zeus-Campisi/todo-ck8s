@@ -1,20 +1,22 @@
-const chai = require('chai');
-const chaiHttp = require('chai-http');
+const assert = require('node:assert/strict');
+const { once } = require('node:events');
+const test = require('node:test');
 const server = require('../server');
 
-// Configure chai
-chai.use(chaiHttp);
-chai.should();
+test('GET /api/v1/todos returns cached todos', async (t) => {
+    server.locals.redisClient = {
+        sMembers: async () => ['Get kids from school', 'Take out the trash']
+    };
 
-describe('Todos', () => {
-    it('should get all todo objects', (done) => {
-        chai.request(server)
-            .get('/api/v1/todos')
-            .end((err, res) => {
-                res.should.have.status(200);
-                res.body.should.be.a('array');
-                done();
-            });
-    });
+    const httpServer = server.listen(0, '127.0.0.1');
+    await once(httpServer, 'listening');
+    t.after(() => new Promise((resolve) => httpServer.close(resolve)));
+
+    const response = await fetch(`http://127.0.0.1:${httpServer.address().port}/api/v1/todos`);
+    assert.equal(response.status, 200);
+    assert.deepEqual(await response.json(), [
+        { title: 'Get kids from school' },
+        { title: 'Take out the trash' }
+    ]);
 });
 

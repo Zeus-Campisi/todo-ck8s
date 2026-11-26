@@ -1,0 +1,8 @@
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/@angular/compiler/fesm2022/compiler.mjs");
+// angular:compiler-init:angular:compiler-init
+
+//# debugId=7e7a8ddf-ff5a-579b-9f0d-e310125d5ba6
+//# sourceMappingURL=init-compiler.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9pbml0LWNvbXBpbGVyLmpzIix7InVybHMiOiI1IiwiaWRzIjoiNiJ9LFsiNyJdLFtdLFsiNyJdLHt9LCIvbm9kZV9tb2R1bGVzL0Bhbmd1bGFyL2NvbXBpbGVyL2Zlc20yMDIyL2NvbXBpbGVyLm1qcyJd
+//# vitestSourceMap={"version":3,"mappings":"AAAA","names":[],"ignoreList":[],"sources":["angular:compiler-init:angular:compiler-init"],"sourcesContent":["import '@angular/compiler';"],"file":"/init-compiler.js"}

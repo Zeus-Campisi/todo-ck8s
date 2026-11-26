@@ -1,0 +1,222 @@
+__vite_ssr_exportName__("default", () => { try { return __vite_ssr_export_default__ } catch {} });
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/chunk-WEEUW4PJ.js", {"importedNames":["TodoService","init_todo_service"]});
+const __vite_ssr_import_1__ = await __vite_ssr_import__("/chunk-T27EYI3P.js", {"importedNames":["Todo","init_todo"]});
+const __vite_ssr_import_2__ = await __vite_ssr_import__("/chunk-EFV3TZQO.js", {"importedNames":["__async","__commonJS","__esm"]});
+const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/core.mjs", {"importedNames":["Component"]});
+const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/core.mjs");
+const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/@angular/common/fesm2022/common.mjs");
+const __vite_ssr_import_6__ = await __vite_ssr_import__("/node_modules/@angular/forms/fesm2022/forms.mjs");
+const __vite_ssr_import_7__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/testing.mjs", {"importedNames":["TestBed"]});
+const __vite_ssr_import_8__ = await __vite_ssr_import__("/node_modules/@angular/common/fesm2022/common.mjs", {"importedNames":["CommonModule"]});
+const __vite_ssr_import_9__ = await __vite_ssr_import__("/node_modules/@angular/common/fesm2022/http.mjs", {"importedNames":["HttpClientModule"]});
+const __vite_ssr_import_10__ = await __vite_ssr_import__("/node_modules/@angular/forms/fesm2022/forms.mjs", {"importedNames":["FormsModule"]});
+
+
+
+// src/app/app.component.ts
+
+
+
+
+function AppComponent_li_9_Template(rf, ctx) {
+	if (rf & 1) {
+		__vite_ssr_import_4__.ɵɵelementStart(0, "li");
+		__vite_ssr_import_4__.ɵɵtext(1);
+		__vite_ssr_import_4__.ɵɵelementEnd();
+	};
+	if (rf & 2) {
+		const todo_r1 = ctx.$implicit;
+		__vite_ssr_import_4__.ɵɵadvance();
+		__vite_ssr_import_4__.ɵɵtextInterpolate(todo_r1.title);
+	}
+}
+function AppComponent_li_17_Template(rf, ctx) {
+	if (rf & 1) {
+		__vite_ssr_import_4__.ɵɵelementStart(0, "li");
+		__vite_ssr_import_4__.ɵɵtext(1);
+		__vite_ssr_import_4__.ɵɵelementEnd();
+	};
+	if (rf & 2) {
+		const searchTodo_r2 = ctx.$implicit;
+		__vite_ssr_import_4__.ɵɵadvance();
+		__vite_ssr_import_4__.ɵɵtextInterpolate(searchTodo_r2._source.todotext);
+	}
+}
+var AppComponent;
+var init_app_component = (0,__vite_ssr_import_2__.__esm)({ "src/app/app.component.ts"() {
+	(0,__vite_ssr_import_1__.init_todo)();
+	(0,__vite_ssr_import_0__.init_todo_service)();
+	(0,__vite_ssr_import_0__.init_todo_service)();
+	AppComponent = class _AppComponent {
+		constructor(todoService) {
+			this.todoService = todoService;
+			this.todos$ = todoService.getAllTodos();
+		}
+		todoService;
+		newTodo = new __vite_ssr_import_1__.Todo();
+		searchText = "";
+		todos$;
+		searchResult$;
+		addTodo() {
+			this.todoService.insertTodo(this.newTodo);
+			this.newTodo = new __vite_ssr_import_1__.Todo();
+			this.todos$ = this.todoService.getAllTodos();
+		}
+		searchTodos() {
+			this.searchResult$ = this.todoService.searchTodos(this.searchText);
+		}
+		static ɵfac = function AppComponent_Factory(__ngFactoryType__) {
+			return new (__ngFactoryType__ || _AppComponent)(__vite_ssr_import_4__.ɵɵdirectiveInject((0,__vite_ssr_import_0__.TodoService)));
+		};
+		static ɵcmp = /* @__PURE__ */ __vite_ssr_import_4__.ɵɵdefineComponent({
+			type: _AppComponent,
+			selectors: [["app-root"]],
+			standalone: false,
+			features: [__vite_ssr_import_4__.ɵɵProvidersFeature([__vite_ssr_import_0__.TodoService])],
+			decls: 19,
+			vars: 8,
+			consts: [
+				[
+					"placeholder",
+					"What needs to be done?",
+					"autofocus",
+					"",
+					3,
+					"ngModelChange",
+					"keyup.enter",
+					"ngModel"
+				],
+				[
+					4,
+					"ngFor",
+					"ngForOf"
+				],
+				[
+					"placeholder",
+					"Search text?",
+					3,
+					"ngModelChange",
+					"keyup.enter",
+					"ngModel"
+				]
+			],
+			template: function AppComponent_Template(rf, ctx) {
+				if (rf & 1) {
+					__vite_ssr_import_4__.ɵɵelementStart(0, "section")(1, "h1");
+					__vite_ssr_import_4__.ɵɵtext(2, "Todos");
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(3, "h3");
+					__vite_ssr_import_4__.ɵɵtext(4, "New Todo");
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(5, "input", 0);
+					__vite_ssr_import_4__.ɵɵcontrolCreate();
+					__vite_ssr_import_4__.ɵɵtwoWayListener("ngModelChange", function AppComponent_Template_input_ngModelChange_5_listener($event) {
+						__vite_ssr_import_4__.ɵɵtwoWayBindingSet(ctx.newTodo.title, $event) || (ctx.newTodo.title = $event);
+						return $event;
+					});
+					__vite_ssr_import_4__.ɵɵlistener("keyup.enter", function AppComponent_Template_input_keyup_enter_5_listener() {
+						return ctx.addTodo();
+					});
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(6, "h3");
+					__vite_ssr_import_4__.ɵɵtext(7, "Todo List");
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(8, "ul");
+					__vite_ssr_import_4__.ɵɵtemplate(9, AppComponent_li_9_Template, 2, 1, "li", 1);
+					__vite_ssr_import_4__.ɵɵpipe(10, "async");
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(11, "h3");
+					__vite_ssr_import_4__.ɵɵtext(12, "Search Todo");
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(13, "input", 2);
+					__vite_ssr_import_4__.ɵɵcontrolCreate();
+					__vite_ssr_import_4__.ɵɵtwoWayListener("ngModelChange", function AppComponent_Template_input_ngModelChange_13_listener($event) {
+						__vite_ssr_import_4__.ɵɵtwoWayBindingSet(ctx.searchText, $event) || (ctx.searchText = $event);
+						return $event;
+					});
+					__vite_ssr_import_4__.ɵɵlistener("keyup.enter", function AppComponent_Template_input_keyup_enter_13_listener() {
+						return ctx.searchTodos();
+					});
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(14, "h3");
+					__vite_ssr_import_4__.ɵɵtext(15, "Search Result");
+					__vite_ssr_import_4__.ɵɵelementEnd();
+					__vite_ssr_import_4__.ɵɵelementStart(16, "ul");
+					__vite_ssr_import_4__.ɵɵtemplate(17, AppComponent_li_17_Template, 2, 1, "li", 1);
+					__vite_ssr_import_4__.ɵɵpipe(18, "async");
+					__vite_ssr_import_4__.ɵɵelementEnd()();
+				};
+				if (rf & 2) {
+					__vite_ssr_import_4__.ɵɵadvance(5);
+					__vite_ssr_import_4__.ɵɵtwoWayProperty("ngModel", ctx.newTodo.title);
+					__vite_ssr_import_4__.ɵɵcontrol();
+					__vite_ssr_import_4__.ɵɵadvance(4);
+					__vite_ssr_import_4__.ɵɵproperty("ngForOf", __vite_ssr_import_4__.ɵɵpipeBind1(10, 4, ctx.todos$));
+					__vite_ssr_import_4__.ɵɵadvance(4);
+					__vite_ssr_import_4__.ɵɵtwoWayProperty("ngModel", ctx.searchText);
+					__vite_ssr_import_4__.ɵɵcontrol();
+					__vite_ssr_import_4__.ɵɵadvance(4);
+					__vite_ssr_import_4__.ɵɵproperty("ngForOf", __vite_ssr_import_4__.ɵɵpipeBind1(18, 6, ctx.searchResult$));
+				}
+			},
+			dependencies: [
+				__vite_ssr_import_5__.NgForOf,
+				__vite_ssr_import_6__.DefaultValueAccessor,
+				__vite_ssr_import_6__.NgControlStatus,
+				__vite_ssr_import_6__.NgModel,
+				__vite_ssr_import_5__.AsyncPipe
+			],
+			encapsulation: 2
+		});
+	};
+	(() => {
+		(typeof ngDevMode === "undefined" || ngDevMode) && __vite_ssr_import_4__.ɵsetClassMetadata(AppComponent, [{
+			type: __vite_ssr_import_3__.Component,
+			args: [{
+				selector: "app-root",
+				standalone: false,
+				providers: [__vite_ssr_import_0__.TodoService],
+				template: "<section>\n  <h1>Todos</h1>\n  <h3>New Todo</h3>\n  <input placeholder=\"What needs to be done?\" autofocus=\"\" [(ngModel)]=\"newTodo.title\" (keyup.enter)=\"addTodo()\">\n  <h3>Todo List</h3>\n  <ul>\n    <li *ngFor=\"let todo of (todos$ | async)\">{{ todo.title }}</li>\n  </ul>\n  <h3>Search Todo</h3>\n  <input placeholder=\"Search text?\" [(ngModel)]=\"searchText\" (keyup.enter)=\"searchTodos()\">\n  <h3>Search Result</h3>\n  <ul>\n    <li *ngFor=\"let searchTodo of (searchResult$ | async)\">{{ searchTodo._source.todotext }}</li>\n  </ul>\n</section>\n",
+				styles: ["/* src/app/app.component.css */\n"]
+			}]
+		}], () => [{ type: __vite_ssr_import_0__.TodoService }], null);
+	})();
+	(() => {
+		(typeof ngDevMode === "undefined" || ngDevMode) && __vite_ssr_import_4__.ɵsetClassDebugInfo(AppComponent, {
+			className: "AppComponent",
+			filePath: "src/app/app.component.ts",
+			lineNumber: 13
+		});
+	})();
+} });
+// src/app/app.component.spec.ts
+
+
+
+
+var require_app_component_spec = (0,__vite_ssr_import_2__.__commonJS)({ "src/app/app.component.spec.ts"(exports) {
+	init_app_component();
+	describe("AppComponent", () => {
+		beforeEach(() => (0,__vite_ssr_import_2__.__async)(null, null, function* () {
+			yield __vite_ssr_import_7__.TestBed.configureTestingModule({
+				declarations: [AppComponent],
+				imports: [
+					__vite_ssr_import_8__.CommonModule,
+					__vite_ssr_import_10__.FormsModule,
+					__vite_ssr_import_9__.HttpClientModule
+				]
+			}).compileComponents();
+		}));
+		it("should create the app", () => {
+			const fixture = __vite_ssr_import_7__.TestBed.createComponent(AppComponent);
+			const app = fixture.debugElement.componentInstance;
+			expect(app).toBeTruthy();
+		});
+	});
+} });
+const __vite_ssr_export_default__ = require_app_component_spec();
+//# debugId=f16d3859-ae93-5b71-91de-1761075593f6
+//# sourceMappingURL=spec-app-app.component.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9zcmMvYXBwL2FwcC5jb21wb25lbnQuc3BlYy50cyIseyJ1cmxzIjoiNSIsImlkcyI6IjYifSxbIjciLCI4IiwiOSIsIjEwIiwiMTEiLCIxMiIsIjEzIiwiMTQiXSxbXSxbIjciLCI4IiwiOSIsIjEwIiwiMTEiLCIxMiIsIjEzIiwiMTQiXSx7fSwiL2NodW5rLVdFRVVXNFBKLmpzIiwiL2NodW5rLVQyN0VZSTNQLmpzIiwiL2NodW5rLUVGVjNUWlFPLmpzIiwiL25vZGVfbW9kdWxlcy9AYW5ndWxhci9jb3JlL2Zlc20yMDIyL2NvcmUubWpzIiwiL25vZGVfbW9kdWxlcy9AYW5ndWxhci9jb21tb24vZmVzbTIwMjIvY29tbW9uLm1qcyIsIi9ub2RlX21vZHVsZXMvQGFuZ3VsYXIvZm9ybXMvZmVzbTIwMjIvZm9ybXMubWpzIiwiL25vZGVfbW9kdWxlcy9AYW5ndWxhci9jb3JlL2Zlc20yMDIyL3Rlc3RpbmcubWpzIiwiL25vZGVfbW9kdWxlcy9AYW5ndWxhci9jb21tb24vZmVzbTIwMjIvaHR0cC5tanMiXQ==
+//# vitestSourceMap={"version":3,"mappings":"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","names":["\\u0275\\u0275elementStart","\\u0275\\u0275text","\\u0275\\u0275elementEnd","\\u0275\\u0275advance","\\u0275\\u0275textInterpolate","\\u0275\\u0275directiveInject","\\u0275\\u0275ProvidersFeature","\\u0275\\u0275controlCreate","\\u0275\\u0275twoWayListener","\\u0275\\u0275twoWayBindingSet","\\u0275\\u0275listener","\\u0275\\u0275template","\\u0275\\u0275twoWayProperty","\\u0275\\u0275control","\\u0275\\u0275property","\\u0275\\u0275pipeBind1"],"ignoreList":[],"sources":["app.component.ts","app.component.spec.ts","app.component.html"],"sourcesContent":["import { Component } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { Todo } from './todo';\nimport { SearchResult, TodoService } from './todo.service';\n\n@Component({\n  selector: 'app-root',\n  standalone: false,\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css'],\n  providers: [TodoService]\n})\nexport class AppComponent {\n  newTodo: Todo = new Todo();\n  searchText = '';\n  public todos$: Observable<Todo[]>;\n  searchResult$: Observable<SearchResult[]> | undefined;\n\n  constructor(private todoService: TodoService) {\n    this.todos$ = todoService.getAllTodos();\n  }\n\n  addTodo(): void {\n    this.todoService.insertTodo(this.newTodo);\n    this.newTodo = new Todo();\n    // Refresh list\n    this.todos$ = this.todoService.getAllTodos();\n  }\n\n  searchTodos(): void {\n    this.searchResult$ = this.todoService.searchTodos(this.searchText);\n  }\n}\n","import { TestBed } from '@angular/core/testing';\nimport { CommonModule } from '@angular/common';\nimport { AppComponent } from './app.component';\nimport { HttpClientModule } from '@angular/common/http';\nimport { FormsModule } from '@angular/forms';\n\ndescribe('AppComponent', () => {\n  beforeEach(async () => {\n    await TestBed.configureTestingModule({\n      declarations: [\n        AppComponent\n      ],\n      imports: [\n        CommonModule,\n        FormsModule,\n        HttpClientModule\n      ]\n    }).compileComponents();\n  });\n\n  it('should create the app', () => {\n    const fixture = TestBed.createComponent(AppComponent);\n    const app = fixture.debugElement.componentInstance;\n    expect(app).toBeTruthy();\n  });\n\n});\n","<section>\n  <h1>Todos</h1>\n  <h3>New Todo</h3>\n  <input placeholder=\"What needs to be done?\" autofocus=\"\" [(ngModel)]=\"newTodo.title\" (keyup.enter)=\"addTodo()\">\n  <h3>Todo List</h3>\n  <ul>\n    <li *ngFor=\"let todo of (todos$ | async)\">{{ todo.title }}</li>\n  </ul>\n  <h3>Search Todo</h3>\n  <input placeholder=\"Search text?\" [(ngModel)]=\"searchText\" (keyup.enter)=\"searchTodos()\">\n  <h3>Search Result</h3>\n  <ul>\n    <li *ngFor=\"let searchTodo of (searchResult$ | async)\">{{ searchTodo._source.todotext }}</li>\n  </ul>\n</section>\n"],"file":"/src/app/app.component.spec.ts"}

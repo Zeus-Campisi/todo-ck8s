@@ -7,18 +7,35 @@ const storageServiceApi = apiAdapter(envProps.storageServiceURL);
 
 // Redis Client Setup //////////////////////////////////////////////////////////////////////////////////////////////////
 const redisClient = redis.createClient({
-    host: envProps.redisHost,
-    port: envProps.redisPort,
-    enable_offline_queue: false,
-    retry_strategy: () => 1000 // try reconnecting after 1 sec.
+    url: `redis://${envProps.redisHost}:${envProps.redisPort}`,
+    socket: {
+        reconnectStrategy: () => 1000
+    }
 });
 redisClient.on('connect', () => console.log('Redis client connected'));
-redisClient.on('error', (err) => console.log('Something went wrong with Redis: ' + err));
+redisClient.on('error', (err) => console.error('Something went wrong with Redis:', err));
+
+redisClient.connect().then(() => {
+    startMessageProcessing();
+}).catch((err) => {
+    console.error('Could not connect to Redis:', err);
+    process.exitCode = 1;
+});
 
 // Messaging Processing ////////////////////////////////////////////////////////////////////////////////////////////////
-
+function startMessageProcessing() {
 rabbitmq.connect(envProps.rabbitmqUrl, function(err, connection) {
+    if (err) {
+        console.error('Could not connect to RabbitMQ:', err);
+        process.exitCode = 1;
+        return;
+    }
     connection.createChannel(function(err, channel) {
+        if (err) {
+            console.error('Could not create RabbitMQ channel:', err);
+            process.exitCode = 1;
+            return;
+        }
         const cacheIngestionQueue = 'cache-ingestion';
 
         channel.assertQueue(cacheIngestionQueue, {durable: true});
@@ -28,50 +45,45 @@ rabbitmq.connect(envProps.rabbitmqUrl, function(err, connection) {
 
         console.log("Waiting for messages in '%s' queue...", cacheIngestionQueue);
 
-        channel.consume(cacheIngestionQueue, function(msg) {
+        channel.consume(cacheIngestionQueue, async function(msg) {
+            if (!msg) {
+                return;
+            }
             const msgContent = msg.content.toString();
 
             console.log("Received '%s' message", msgContent);
 
-            if (msgContent === '**load**') {
-                loadRedisFromStorage();
-            } else {
-                addTodo2Redis(msgContent);
-            }
-
-            setTimeout(function() {
+            try {
+                if (msgContent === '**load**') {
+                    await loadRedisFromStorage();
+                } else {
+                    await addTodo2Redis(msgContent);
+                }
                 channel.ack(msg);
-            }, 1000); // 1 second
+            } catch (error) {
+                console.error('Could not process cache-ingestion message:', error);
+                channel.nack(msg, false, true);
+            }
 
         }, {noAck: false});
     });
 });
-
-function loadRedisFromStorage(todoTitle) {
-    storageServiceApi.get('/api/v1/todos')
-        .then(resp2 => {
-            todos = resp2.data;
-            if (todos == null || todos.length <=0) {
-                console.log('Nothing to load, got nothing from Todo Storage');
-            } else {
-                console.log('Loading Todos from Todo Storage (' + todos.length + ')');
-                for (let i = 0; i < todos.length; i++) {
-                    addTodo2Redis(todos[i].title)
-                }
-            }
-        })
-        .catch(err2 => {
-            console.log(err2);
-        });
 }
 
-function addTodo2Redis(todoTitle) {
-    // Update the Redis cache (add the todo text to the Set in Redis)
-    redisClient.sadd(['todos', todoTitle], (error, reply) => {
-        if (error) {
-            console.error('Not able to add Todo: [' + todoTitle + '] to Redis Cache');
-        } else {
-            console.log('Added Todo: [' + todoTitle + '] to Redis Cache');
-        }
-    });
+async function loadRedisFromStorage() {
+    const response = await storageServiceApi.get('/api/v1/todos');
+    const todos = response.data;
+    if (!todos || todos.length === 0) {
+        console.log('Nothing to load, got nothing from Todo Storage');
+        return;
+    }
+    console.log('Loading Todos from Todo Storage (' + todos.length + ')');
+    for (const todo of todos) {
+        await addTodo2Redis(todo.title);
+    }
+}
+
+async function addTodo2Redis(todoTitle) {
+    await redisClient.sAdd('todos', todoTitle);
+    console.log('Added Todo: [' + todoTitle + '] to Redis Cache');
 }

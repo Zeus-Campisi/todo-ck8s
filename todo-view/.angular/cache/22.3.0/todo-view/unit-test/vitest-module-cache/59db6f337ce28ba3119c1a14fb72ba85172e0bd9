@@ -1,0 +1,63 @@
+__vite_ssr_exportName__("TodoService", () => { try { return TodoService } catch {} });
+__vite_ssr_exportName__("init_todo_service", () => { try { return init_todo_service } catch {} });
+const __vite_ssr_import_0__ = await __vite_ssr_import__("/chunk-EFV3TZQO.js", {"importedNames":["__esm"]});
+const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/core.mjs", {"importedNames":["Injectable"]});
+const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/@angular/common/fesm2022/http.mjs", {"importedNames":["HttpHeaders"]});
+const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/@angular/core/fesm2022/core.mjs");
+const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/@angular/common/fesm2022/http.mjs");
+
+
+// src/app/todo.service.ts
+
+
+
+
+var BASE_PATH, TodoService;
+var init_todo_service = (0,__vite_ssr_import_0__.__esm)({
+  "src/app/todo.service.ts"() {
+    BASE_PATH = "/api/v1";
+    TodoService = class _TodoService {
+      constructor(http) {
+        this.http = http;
+      }
+      http;
+      getAllTodos() {
+        console.log("TodoService::getAllTodos was called");
+        return this.http.get(BASE_PATH + "/todos");
+      }
+      insertTodo(todo) {
+        console.log("TodoService::insertTodo was called: " + todo.title);
+        const headers = new __vite_ssr_import_2__.HttpHeaders({ "Content-Type": "application/json" });
+        this.http.post(BASE_PATH + "/todos", todo, { headers }).subscribe((res) => {
+          console.log(res);
+        }, (err) => {
+          console.log(err.error);
+          console.log(err.name);
+          console.log(err.message);
+          console.log(err.status);
+        });
+      }
+      searchTodos(searchText) {
+        console.log("TodoService::searchTodos was called: " + searchText);
+        const headers = new __vite_ssr_import_2__.HttpHeaders({ "Content-Type": "application/json" });
+        return this.http.post(BASE_PATH + "/search", { searchText }, { headers });
+      }
+      static \u0275fac = function TodoService_Factory(__ngFactoryType__) {
+        return new (__ngFactoryType__ || _TodoService)(__vite_ssr_import_3__.\u0275\u0275inject(__vite_ssr_import_4__.HttpClient));
+      };
+      static \u0275prov = /* @__PURE__ */ __vite_ssr_import_3__.\u0275\u0275defineInjectable({ token: _TodoService, factory: _TodoService.\u0275fac });
+    };
+    (() => {
+      (typeof ngDevMode === "undefined" || ngDevMode) && __vite_ssr_import_3__.\u0275setClassMetadata(TodoService, [{
+        type: __vite_ssr_import_1__.Injectable
+      }], () => [{ type: __vite_ssr_import_4__.HttpClient }], null);
+    })();
+  }
+});
+
+
+//# debugId=fac6914f-332c-50b7-a530-f9070903788e
+//# sourceMappingURL=chunk-WEEUW4PJ.js.map
+
+//# vitestCache=W3siZmlsZSI6IjEiLCJpZCI6IjEiLCJpbXBvcnRzIjoiMiIsIm1hcHBpbmdzIjpmYWxzZSwiZGVwcyI6IjMiLCJkeW5hbWljRGVwcyI6IjQiLCJzdGF0aWNNb2NrcyI6bnVsbCwiaGFzQ292ZXJhZ2VEYXRhIjpmYWxzZX0sIi9ob21lL3pjYW1waXNpL2NvdXJzZS90b2RvLWNsb3VkLWs4cy1zdGFydGVyL3RvZG8tdmlldy9jaHVuay1XRUVVVzRQSi5qcyIseyJ1cmxzIjoiNSIsImlkcyI6IjYifSxbIjciLCI4IiwiOSJdLFtdLFsiNyIsIjgiLCI5Il0se30sIi9jaHVuay1FRlYzVFpRTy5qcyIsIi9ub2RlX21vZHVsZXMvQGFuZ3VsYXIvY29yZS9mZXNtMjAyMi9jb3JlLm1qcyIsIi9ub2RlX21vZHVsZXMvQGFuZ3VsYXIvY29tbW9uL2Zlc20yMDIyL2h0dHAubWpzIl0=
+//# vitestSourceMap={"version":3,"mappings":"AAAA,CAAA;;;AAAA;AAEA;;;;;;;;;;AAFA,IAKM,WAGO;AARb;;AAKA,IAAM,YAAY;AAGZ,IAAO,cAAP,MAAO,aAAW;MAEtB,YAAoB,MAAgB;AAAhB;MACpB;MADoB;MAGb,cAAiC;AACtC,gBAAQ,IAAI,qCAAqC;AAEjD,eAAO,KAAK,KAAK,IAAY,YAAY,QAAQ;MACnD;MAEO,WAAW,MAAiB;AACjC,gBAAQ,IAAI,yCAAyC,KAAK,KAAK;AAE/D,cAAM,UAAU,IAAI,kCAAY,EAAE,gBAAgB,mBAAkB,CAAE;AACtE,aAAK,KAAK,KAAK,YAAY,UAAU,MAAM,EAAE,QAAgB,CAAE,EAAE,UAC/D,SAAM;AACJ,kBAAQ,IAAI,GAAG;QACjB,GACA,CAAC,QAA0B;AACzB,kBAAQ,IAAI,IAAI,KAAK;AACrB,kBAAQ,IAAI,IAAI,IAAI;AACpB,kBAAQ,IAAI,IAAI,OAAO;AACvB,kBAAQ,IAAI,IAAI,MAAM;QACxB,CAAC;MACL;MAEO,YAAY,YAA+C;AAChE,gBAAQ,IAAI,0CAA0C,UAAU;AAEhE,cAAM,UAAU,IAAI,kCAAY,EAAE,gBAAgB,mBAAkB,CAAE;AACtE,eAAO,KAAK,KAAK,KACf,YAAY,WACZ,EAAE,WAAsB,GACxB,EAAE,QAAgB,CAAE;MACxB;;yCAnCW,cAAW;MAAA;sGAAX,cAAW,SAAX,aAAW;;;sGAAX,aAAW;cADvB","names":[],"ignoreList":[],"sources":["src/app/todo.service.ts"],"sourcesContent":["import { Injectable } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';\nimport { Todo } from './todo';\n\nconst BASE_PATH = '/api/v1';\n\n@Injectable()\nexport class TodoService {\n\n  constructor(private http: HttpClient) {\n  }\n\n  public getAllTodos(): Observable<Todo[]> {\n    console.log('TodoService::getAllTodos was called');\n\n    return this.http.get<Todo[]>(BASE_PATH + '/todos');\n  }\n\n  public insertTodo(todo: Todo): void {\n    console.log('TodoService::insertTodo was called: ' + todo.title);\n\n    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });\n    this.http.post(BASE_PATH + '/todos', todo, { headers: headers }).subscribe(\n      res => {\n        console.log(res);\n      },\n      (err: HttpErrorResponse) => {\n        console.log(err.error);\n        console.log(err.name);\n        console.log(err.message);\n        console.log(err.status);\n      });\n  }\n\n  public searchTodos(searchText: string): Observable<SearchResult[]> {\n    console.log('TodoService::searchTodos was called: ' + searchText);\n\n    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });\n    return this.http.post<SearchResult[]>(\n      BASE_PATH + '/search',\n      { searchText: searchText },\n      { headers: headers });\n  }\n}\n\nexport interface SearchResult {\n  _source: {\n    todotext: string;\n  };\n}\n"],"file":"/chunk-WEEUW4PJ.js"}
